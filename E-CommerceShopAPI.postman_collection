@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "d6e4e6da-f9de-456a-91b1-ff787674f327",
+		"name": "E-Commerce Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34982400"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "{{API_PREFIX}}categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PREFIX}}categories?page=1&limit=10",
+							"host": [
+								"{{API_PREFIX}}categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Linh tinh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}categories",
+							"host": [
+								"{{API_PREFIX}}categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}categories",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"đồ điện tử 123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}categories/1",
+							"host": [
+								"{{API_PREFIX}}categories"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}categories",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_PREFIX}}categories/1",
+							"host": [
+								"{{API_PREFIX}}categories"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "{{API_PREFIX}}products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"macbook 15\",\r\n    \"price\": \"456.123\",\r\n    \"description\":\"this is product\",\r\n    \"category_id\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}products",
+							"host": [
+								"{{API_PREFIX}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}products/uploads/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwaG9uZU51bWJlciI6IjAxMjM0NTY3OCIsInN1YiI6IjAxMjM0NTY3OCIsImV4cCI6MTcyNjQ5OTMyMn0.y5hDNtPu6qtLIWsTmMgXntSrp6swVo78Nv6bHvMIxoY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/lones/Downloads/imgproduct/0131.jpg",
+										"/C:/Users/lones/Downloads/imgproduct/0130.jpg",
+										"/C:/Users/lones/Downloads/imgproduct/0129.jpg",
+										"/C:/Users/lones/Downloads/imgproduct/0128.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}products/uploads/33",
+							"host": [
+								"{{API_PREFIX}}products"
+							],
+							"path": [
+								"uploads",
+								"33"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}products/4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}products/3",
+							"host": [
+								"{{API_PREFIX}}products"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}products/images/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}products/images/buon.jpg",
+							"host": [
+								"{{API_PREFIX}}products"
+							],
+							"path": [
+								"images",
+								"buon.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}products/4 Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}products/4",
+							"host": [
+								"{{API_PREFIX}}products"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwaG9uZU51bWJlciI6IjAxMjM0NTYiLCJzdWIiOiIwMTIzNDU2IiwiZXhwIjoxNzIzMTI3MjM1fQ.K9D7cUG6IxNGM1pS5A9RTZ6BCvP_aD9q7XEhZkPBxaY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}products?page=0&limit=10&keyword=Anh&category_id=3",
+							"host": [
+								"{{API_PREFIX}}products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": "Anh"
+								},
+								{
+									"key": "category_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{API_PREFIX}}products/generateFakeProducts",
+							"host": [
+								"{{API_PREFIX}}products"
+							],
+							"path": [
+								"generateFakeProducts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "{{API_PREFIX}}/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//  {\r\n//     \"fullname\":\"Nguyễn Văn A\",\r\n//     \"phone_number\":\"012345678\",\r\n//     \"address\":\"Nhà a ngõ b\",\r\n//     \"password\":\"123456\",\r\n//     \"retype_password\":\"123456\",\r\n//     \"date_of_birth\":\"2004-10-31\",\r\n//     \"facebook_account_id\": 0,\r\n//     \"google_account_id\": 0,\r\n//     \"role_id\":1\r\n// }\r\n {\r\n    \"fullname\":\"Tài khoản Admin 1\",\r\n    \"phone_number\":\"11223344\",\r\n    \"address\":\"đây là admin\",\r\n    \"password\":\"11223344\",\r\n    \"retype_password\":\"11223344\",\r\n    \"date_of_birth\":\"1999-10-31\",\r\n    \"facebook_account_id\": 0,\r\n    \"google_account_id\": 0,\r\n    \"role_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}users/register",
+							"host": [
+								"{{API_PREFIX}}users"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}Users/login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwaG9uZU51bWJlciI6IjAxMjM0NTYiLCJzdWIiOiIwMTIzNDU2IiwiZXhwIjoxNzIzMTI3MjM1fQ.K9D7cUG6IxNGM1pS5A9RTZ6BCvP_aD9q7XEhZkPBxaY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "vi",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\":\"012345678\",\r\n    \"password\":\"123456\",\r\n    \"role_id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}users/login",
+							"host": [
+								"{{API_PREFIX}}users"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "{{API_PREFIX}}orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwaG9uZU51bWJlciI6IjAxMjM0NTY3OCIsInN1YiI6IjAxMjM0NTY3OCIsImV4cCI6MTcyNDUxNDk3MX0.5FxdzzJY_yyKzexKKK_lZmnnWZNmbTBWe7coWl7bPF0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"user_id\": 1,\r\n     \"fullname\":\"Nguyễn Văn X\",\r\n     \"email\":\"X@gmail.com\",\r\n     \"phone_number\": 1234567,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"note\":\"hàng dễ vỡ\",\r\n     \"total_money\": 123.456,\r\n     \"shipping_method\": \"express\",\r\n     \"payment_method\": \"cod\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}orders",
+							"host": [
+								"{{API_PREFIX}}orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwaG9uZU51bWJlciI6IjAxMjM0NTY3OCIsInN1YiI6IjAxMjM0NTY3OCIsImV4cCI6MTcyNDUxNDk3MX0.5FxdzzJY_yyKzexKKK_lZmnnWZNmbTBWe7coWl7bPF0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"user_id\": 1,\r\n     \"fullname\":\"Nguyễn Văn X12\",\r\n     \"email\":\"X12@gmail.com\",\r\n     \"phone_number\": 1234567999,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"note\":\"hàng dễ vỡ\",\r\n     \"total_money\": 123.456,\r\n     \"shipping_method\": \"express\",\r\n     \"shipping_address\":\"nha dep trai vcl\",\r\n     \"shipping_date\":\"2024-05-09\",\r\n     \"payment_method\": \"cod\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}orders/2",
+							"host": [
+								"{{API_PREFIX}}orders"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJwaG9uZU51bWJlciI6IjAxMjM0NTY3OCIsInN1YiI6IjAxMjM0NTY3OCIsImV4cCI6MTcyNDUxNDk3MX0.5FxdzzJY_yyKzexKKK_lZmnnWZNmbTBWe7coWl7bPF0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_PREFIX}}orders/2",
+							"host": [
+								"{{API_PREFIX}}orders"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders/user/{user_id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"user_id\": 1,\r\n     \"full_name\":\"Nguyễn Văn X\",\r\n     \"email\":\"X@gmail.com\",\r\n     \"phone_number\": 1234567,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"note\":\"hàng dễ vỡ\",\r\n     \"total_money\": 123.456,\r\n     \"shipping_method\": \"express\",\r\n     \"payment_method\": \"cod\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}orders/user/1",
+							"host": [
+								"{{API_PREFIX}}orders"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"user_id\": 1,\r\n     \"full_name\":\"Nguyễn Văn X\",\r\n     \"email\":\"X@gmail.com\",\r\n     \"phone_number\": 1234567,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"note\":\"hàng dễ vỡ\",\r\n     \"total_money\": 123.456,\r\n     \"shipping_method\": \"express\",\r\n     \"payment_method\": \"cod\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}orders/5",
+							"host": [
+								"{{API_PREFIX}}orders"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order_details",
+			"item": [
+				{
+					"name": "{{API_PREFIX}}orders_details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"order_id\": 2,\r\n     \"product_id\": 1,\r\n     \"price\": 12.33,\r\n     \"number_of_products\": 2,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"total_money\": 123.456,\r\n     \"color\": \"#012df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}order_details",
+							"host": [
+								"{{API_PREFIX}}order_details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders_details Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"order_id\": 2,\r\n     \"product_id\": 1,\r\n     \"price\": 12.33,\r\n     \"number_of_products\": 2,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"total_money\": 123.456,\r\n     \"color\": \"#012df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}order_details",
+							"host": [
+								"{{API_PREFIX}}order_details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders_details/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"order_id\": 2,\r\n     \"product_id\": 1,\r\n     \"price\": 12.33,\r\n     \"number_of_products\": 2,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"total_money\": 123.456,\r\n     \"color\": \"#012df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}order_details/1",
+							"host": [
+								"{{API_PREFIX}}order_details"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders_details/order/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"order_id\": 2,\r\n     \"product_id\": 1,\r\n     \"price\": 12.33,\r\n     \"number_of_products\": 2,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"total_money\": 123.456,\r\n     \"color\": \"#012df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}order_details/order/2",
+							"host": [
+								"{{API_PREFIX}}order_details"
+							],
+							"path": [
+								"order",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders_details/order/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"order_id\": 5,\r\n     \"product_id\": 1,\r\n     \"price\": 12.333,\r\n     \"number_of_products\": 2,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"total_money\": 123.456,\r\n     \"color\": \"#012df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}order_details/2",
+							"host": [
+								"{{API_PREFIX}}order_details"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{API_PREFIX}}orders_details/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"order_id\": 2,\r\n     \"product_id\": 1,\r\n     \"price\": 12.33,\r\n     \"number_of_products\": 2,\r\n     \"address\": \"Nhà TP.HCM\",\r\n     \"total_money\": 123.456,\r\n     \"color\": \"#012df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PREFIX}}order_details/2",
+							"host": [
+								"{{API_PREFIX}}order_details"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "{{API_PREFIX}}roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PREFIX}}roles",
+							"host": [
+								"{{API_PREFIX}}roles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
